@@ -4,6 +4,7 @@ const dotenv  = require("dotenv").config()
 const connectDB = require("./src/connectDb")
 
 const contactsRoute = require("./routes/contactRoutes")
+const userRoute = require("./routes/userRoutes")
 
 const errorHandler= require('./middleware/errorHandler')
 
@@ -25,6 +26,7 @@ app.get('/', (req, res) => {
 
 //route middleware for /contact path
 app.use('/contact', contactsRoute)
+app.use('/user', userRoute)
 
 app.use(errorHandler)
 
